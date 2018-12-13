@@ -5,3 +5,6 @@ OpenUnite's API is federated, meaning anybody can host an OpenUnite hub and shar
 
 ### Status of the project
 This project is currently being drafted.
+
+### Documentation
+* [Project Outline](https://github.com/openunite/openunite/wiki/Project-Outline)
