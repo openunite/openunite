@@ -8,3 +8,5 @@ This project is currently being drafted.
 
 ### Documentation
 * [Project Outline](https://github.com/openunite/openunite/wiki/Project-Outline)
+* [Ideas](https://github.com/openunite/openunite/wiki/Ideas)
+* [Hub synchronization](https://github.com/openunite/openunite/wiki/Hub-synchronization)
