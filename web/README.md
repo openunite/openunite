@@ -1,3 +1,7 @@
+
+## Setup 
+Run `yarn` or `npm install` to get all required dependencies.
+
 ## Available Scripts
 
 In the project directory, you can run:
