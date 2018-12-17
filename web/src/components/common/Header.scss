@@ -1,0 +1,10 @@
+@import '../../../node_modules/@blueprintjs/core/lib/scss/variables';
+
+.logo {
+  font-weight: bold;
+  color: $blue1;
+}
+
+.logo:hover {
+  text-decoration: none;
+}

@@ -1,0 +1,19 @@
+@import '../node_modules/@blueprintjs/core/lib/scss/variables';
+
+body {
+    padding-top: $pt-navbar-height + 20px;
+}
+
+.wrapper {
+    margin: 0 auto;
+    width: 70%;
+}
+
+.flexContainer {
+    display: flex;
+    justify-content: center;
+}
+
+main {
+    width: 70%;
+}

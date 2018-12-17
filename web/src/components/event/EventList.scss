@@ -1,0 +1,21 @@
+@import '../../../node_modules/@blueprintjs/core/lib/scss/variables';
+
+.eventItem {
+  margin: 10px;
+
+  h5 {
+    margin: 0;
+    color: $blue1;
+  }
+
+  h2 {
+    margin-top: 0;
+    color: $blue1;
+  }
+
+  .date {
+    margin: 0;
+    float: right;
+    color: $gray3;
+  }
+}

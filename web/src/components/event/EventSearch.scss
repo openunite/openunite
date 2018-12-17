@@ -1,0 +1,32 @@
+@import '../../../node_modules/@blueprintjs/core/lib/scss/variables';
+
+.searchContainer {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+  padding: 10px;
+  background: $blue1;
+  color: $white;
+  border: 1px solid $blue1;
+  border-radius: 3px;
+
+  .text {
+    margin: 0 10px
+  }
+
+  .search {
+    width: 55%;
+  }
+
+  .selector {
+    font-weight: bold;
+    color: $white !important;
+    background: rgba(167, 182, 194, 0.3);
+  }
+
+  .searchButton {
+    color: $white !important;
+    margin-left: 10px;
+  }
+}
+

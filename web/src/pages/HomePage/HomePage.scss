@@ -1,0 +1,12 @@
+@import '../../../node_modules/@blueprintjs/core/lib/scss/variables';
+
+.hero {
+  margin-top: -20px;
+  margin-bottom: 20px;
+  padding: 30px;
+  background: $blue4;
+}
+
+h1 {
+  color: $white;
+}
