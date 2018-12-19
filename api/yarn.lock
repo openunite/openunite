@@ -175,13 +175,6 @@
     "@types/express-serve-static-core" "*"
     "@types/mime" "*"
 
-"@types/should@13.0.0":
-  version "13.0.0"
-  resolved "https://registry.yarnpkg.com/@types/should/-/should-13.0.0.tgz#96c00117f1896177848fdecfa336313c230c879e"
-  integrity sha512-Mi6YZ2ABnnGGFMuiBDP0a8s1ZDCDNHqP97UH8TyDmCWuGGavpsFMfJnAMYaaqmDlSCOCNbVLHBrSDEOpx/oLhw==
-  dependencies:
-    should "*"
-
 "@types/superagent@*":
   version "3.8.5"
   resolved "https://registry.yarnpkg.com/@types/superagent/-/superagent-3.8.5.tgz#a8eb8ec5bce0234e50d6b8bee1941b5bb5686e2d"
@@ -3221,7 +3214,7 @@ should-util@^1.0.0:
   resolved "https://registry.yarnpkg.com/should-util/-/should-util-1.0.0.tgz#c98cda374aa6b190df8ba87c9889c2b4db620063"
   integrity sha1-yYzaN0qmsZDfi6h8mInCtNtiAGM=
 
-should@*, should@13.2.3:
+should@13.2.3:
   version "13.2.3"
   resolved "https://registry.yarnpkg.com/should/-/should-13.2.3.tgz#96d8e5acf3e97b49d89b51feaa5ae8d07ef58f10"
   integrity sha512-ggLesLtu2xp+ZxI+ysJTmNjh2U0TsC+rQ/pfED9bUZZ4DKefP27D+7YJVVTvKsmjLpIi9jAa7itwDGkDDmt1GQ==
