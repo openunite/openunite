@@ -16,4 +16,6 @@ For bug reports and feature requests: [Github Issues](https://github.com/openuni
 
 For pushing code, fork and PR away :D
 
-Note on PRs: Please create a branch from `master` starting with the issue's id (eg: `4-create-login`).
+Note on PRs: 
+* Please create a branch from `master` starting with the issue's id (eg: `4-create-login`).
+* Please regularly sync your fork by adding the original repo as the upstream remote (`git remote add upstream git@github.com:openunite/openunite.git`) and `git pull upstream master`
