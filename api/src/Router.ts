@@ -1,7 +1,12 @@
 import KoaRouter from "koa-router";
 
+import * as AuthController from "./controllers/AuthController"
+
 function createRouter() {
   const router = new KoaRouter();
+
+  // Auth Routes
+  router.post("/login", AuthController.login)
 
   // Health endpoint
   router.get("/health", (ctx) => {
