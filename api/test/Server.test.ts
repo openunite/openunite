@@ -17,24 +17,22 @@ describe("Server", () => {
 
       done();
     });
+  });
 
-    describe("Koa Server", () => {
-      it("should use the given Router", (done) => {
-        // arrange
-        const router = new KoaRouter();
+  it("should use the given Router", (done) => {
+    // arrange
+    const router = new KoaRouter();
 
-        // act
-        const server = createServer(router);
+    // act
+    const server = createServer(router);
 
-        // assert
-        const hasRouter = server.middleware.some(
-          (middleware: any) => typeof middleware.router !== "undefined"
-        );
+    // assert
+    const hasRouter = server.middleware.some(
+      (middleware: any) => typeof middleware.router !== "undefined"
+    );
 
-        hasRouter.should.be.true();
+    hasRouter.should.be.true();
 
-        done();
-      });
-    });
+    done();
   });
 });
