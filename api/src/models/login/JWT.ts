@@ -1,7 +1,7 @@
 interface JWT {
-    sub: number,
-    name: string
-    iat: number
+  sub: number;
+  name: string;
+  iat: number;
 }
 
 export default JWT;

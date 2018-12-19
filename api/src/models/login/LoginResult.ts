@@ -1,4 +1,4 @@
 interface LoginResult {
-    token?: string,
+  token?: string;
 }
 export default LoginResult;

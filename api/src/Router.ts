@@ -6,10 +6,10 @@ function createRouter() {
   const router = new KoaRouter();
 
   // Auth Routes
-  router.post("/api/login", AuthController.login)
+  router.post("/login", AuthController.login)
 
   // Health endpoint
-  router.get("/api/health", (ctx) => {
+  router.get("/health", (ctx) => {
     ctx.status = 200;
   });
 
