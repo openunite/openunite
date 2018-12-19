@@ -1,3 +1,5 @@
+[![Build Status](https://ci.openunite.org/api/badges/openunite/openunite/status.svg)](https://ci.openunite.org/openunite/openunite)
+
 # OpenUnite
 OpenUnite is a distributed open source tool to gather people together to do an activity. It supports groups of any size, no matter if they're meeting once or on a frequent basis. Handles paid events and sponsors if needed.
 
@@ -16,6 +18,6 @@ For bug reports and feature requests: [Github Issues](https://github.com/openuni
 
 For pushing code, fork and PR away :D
 
-Note on PRs: 
+Note on PRs:
 * Please create a branch from `master` starting with the issue's id (eg: `4-create-login`).
 * Please regularly sync your fork by adding the original repo as the upstream remote (`git remote add upstream git@github.com:openunite/openunite.git`) and `git pull upstream master`
