@@ -41,6 +41,7 @@
   },
   "devDependencies": {
     "@types/koa": "2.0.47",
+    "@types/koa-router": "7.0.35",
     "@types/mocha": "5.2.5",
     "@types/node": "10.12.17",
     "@types/should": "13.0.0",
@@ -59,6 +60,7 @@
   },
   "dependencies": {
     "koa": "2.6.2",
+    "koa-router": "7.4.0",
     "ts-node": "7.0.1"
   }
 }
