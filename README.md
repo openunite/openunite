@@ -13,6 +13,7 @@ This project is currently being drafted.
 
 ### Contributing
 For bug reports and feature requests: [Github Issues](https://github.com/openunite/openunite/issues)
+
 For pushing code, fork and PR away :D
 
 Note on PRs: Please create a branch from `master` starting with the issue's id (eg: `4-create-login`).
