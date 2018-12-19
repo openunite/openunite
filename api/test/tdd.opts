@@ -1,0 +1,9 @@
+--require ts-node/register
+--async-only
+--check-leaks
+--allow-uncaught
+--watch
+--watch-extensions ts
+--bail
+--recursive
+test/*.ts
