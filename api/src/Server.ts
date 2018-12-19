@@ -1,7 +1,8 @@
 import Koa from "koa";
+import KoaRouter from "koa-router";
 import bodyParser from "koa-bodyparser";
 
-function createServer(router: import("koa-router")) {
+function createServer(router: KoaRouter) {
   const app = new Koa();
 
   app.use(bodyParser());
