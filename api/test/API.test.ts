@@ -69,11 +69,11 @@ describe("API", () => {
     });
 
     describe("When credentials are valid", () => {
-      it("should return 200 response", async () => {
-        // arrange
-        const username = testCredentials.username;
-        const password = testCredentials.password;
+      // arrange
+      const username = testCredentials.username;
+      const password = testCredentials.password;
 
+      it("should return 200 response", async () => {
         // act
         const response = await request
           .post("/login")
@@ -81,6 +81,15 @@ describe("API", () => {
 
         // assert
         response.status.should.equal(200);
+      });
+
+      it("should return a JWT token", async () => {
+        // act
+        const response = await request
+          .post("/login")
+          .send({ username, password });
+
+        // assert
         response.body.should.have.property("token").which.is.a.String();
       });
     });
