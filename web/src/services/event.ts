@@ -7,7 +7,7 @@ export class EventService {
     let events;
 
     try {
-      events = await api.get(`events`);
+      events = await api.get("events");
     } catch (err) {
       console.log(err);
       return;

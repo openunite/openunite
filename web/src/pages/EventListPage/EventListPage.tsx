@@ -4,9 +4,9 @@ import EventList from "../../components/event/EventList";
 import Header from "../../components/common/Header";
 import Footer from "../../components/common/Footer";
 import EventCalendar from "../../components/event/EventCalendar";
-import "./EventPage.scss";
+import "./EventListPage.scss";
 
-class EventPage extends Component {
+class EventListPage extends Component {
   state = {
     pastEvents: [],
     futureEvents: []
@@ -22,7 +22,7 @@ class EventPage extends Component {
 
   render() {
     return (
-      <div className="eventPage">
+      <div className="eventListPage">
         <header>
           <Header />
         </header>
@@ -46,4 +46,4 @@ class EventPage extends Component {
   }
 }
 
-export default EventPage;
+export default EventListPage;

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import HomePage from "./pages/HomePage/HomePage";
 import ScheduleEventPage from "./pages/ScheduleEventPage/ScheduleEventPage";
 import LoginPage from "./pages/LoginPage/LoginPage";
-import EventPage from "./pages/EventPage/EventPage";
+import EventListPage from "./pages/EventListPage/EventListPage";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import "normalize.css/normalize.css";
@@ -19,7 +19,7 @@ class App extends Component {
           <Route exact path="/" component={HomePage} />
           <Route exact path="/schedule" component={ScheduleEventPage} />
           <Route exact path="/login" component={LoginPage} />
-          <Route exact path="/events" component={EventPage} />
+          <Route exact path="/events" component={EventListPage} />
         </div>
       </Router>
     );
