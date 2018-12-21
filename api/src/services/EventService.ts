@@ -80,7 +80,7 @@ class EventService {
   }
 
   async insert(newEvent: any) {
-    const slug =
+    newEvent.slug =
       newEvent.slug || newEvent.title.toLowerCase().replace(/[^a-z0-9-]/g, "-");
 
     newEvent.group = {
@@ -90,7 +90,7 @@ class EventService {
 
     dummyResponse.push(newEvent);
 
-    return { slug };
+    return { slug: newEvent.slug };
   }
 }
 
