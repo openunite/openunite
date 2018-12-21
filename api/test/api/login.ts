@@ -8,6 +8,7 @@ import {
   createTestAuthController
 } from "@openunite/test";
 import { AuthService } from "@openunite/src/services/AuthService";
+import { TokenService } from "@openunite/src/services/TokenService";
 
 const testCredentials = {
   email: "test@localhost",
@@ -21,7 +22,8 @@ describe("/login", () => {
   let request: supertest.SuperTest<supertest.Test>;
 
   beforeEach(() => {
-    const authService = new AuthService(testCredentials, testJwtSecret);
+    const tokenService = new TokenService(testJwtSecret);
+    const authService = new AuthService(testCredentials, tokenService);
     const authController = createTestAuthController(authService);
     const router = createTestRouter({ authController });
     const app = createTestServer(router);

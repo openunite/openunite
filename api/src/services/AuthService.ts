@@ -1,37 +1,26 @@
 import UserLogin from "../models/login/UserLogin";
 import LoginResult from "../models/login/LoginResult";
-import JWT from "../models/login/JWT";
-import jsonwebtoken from "jsonwebtoken";
+import { TokenService } from "./TokenService";
 
 type Credentials = {
   email: string;
   password: string;
 };
 
-const jwtOptions = {
-  expiresIn: "1 day"
-};
-
 class AuthService {
   private credentials: Credentials;
-  private jwtSecret: string;
+  private tokenService: TokenService;
 
-  constructor(credentials: Credentials, jwtSecret: string) {
+  constructor(credentials: Credentials, tokenService: TokenService) {
     this.credentials = credentials;
-    this.jwtSecret = jwtSecret;
+    this.tokenService = tokenService;
   }
 
   async login(userLogin: UserLogin): Promise<LoginResult> {
     const { email, password } = this.credentials;
 
     if (userLogin.email === email && userLogin.password === password) {
-      let payload: JWT = {
-        sub: 1,
-        name: "admin",
-        iat: new Date().getTime()
-      };
-
-      let token = jsonwebtoken.sign(payload, this.jwtSecret, jwtOptions);
+      const token = await this.tokenService.create("1", { name: email });
       return { token };
     } else {
       return {};

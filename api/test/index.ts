@@ -5,6 +5,7 @@ import { AuthController } from "@openunite/src/controllers/AuthController";
 import { AuthService } from "@openunite/src/services/AuthService";
 import { EventController } from "@openunite/src/controllers/EventController";
 import { EventService } from "@openunite/src/services/EventService";
+import { TokenService } from "@openunite/src/services/TokenService";
 
 type TestControllers = {
   authController?: AuthController;
@@ -13,12 +14,14 @@ type TestControllers = {
 
 const testHttpPort = 7979;
 
+const testTokenService = new TokenService("test-secret");
+
 const testAuthService = new AuthService(
   {
     email: "test@localhost",
     password: "test-password"
   },
-  "test-secret"
+  testTokenService
 );
 
 const testEventService = new EventService();
