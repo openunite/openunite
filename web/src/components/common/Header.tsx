@@ -24,6 +24,8 @@ class Header extends Component {
 
   logout() {
     UserService.logout();
+
+    // FIXME
     window.location.href = "/";
   }
 
