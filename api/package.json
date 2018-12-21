@@ -23,7 +23,7 @@
       "npm run format",
       "git add"
     ],
-    "*.{json}": [
+    "*.json": [
       "npm run format",
       "git add"
     ]
