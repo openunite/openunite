@@ -1,6 +1,6 @@
 ## Setup
 
-Run `yarn` or `npm install` to get all required dependencies.
+Run `npm install` to get all required dependencies.
 
 ## Available Scripts
 
