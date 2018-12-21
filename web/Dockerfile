@@ -10,4 +10,7 @@ COPY . .
 RUN npm run build
 
 FROM nginx:1.15-alpine 
-COPY --from=builder /app/build /usr/share/nginx/html/
+RUN mkdir -p /app
+COPY --from=builder /app/build /app
+COPY ./container/etc/nginx/conf.d/default.conf /etc/nginx/conf.d
+
