@@ -12,13 +12,15 @@ interface User {
   accessToken: string;
 }
 
+const storageService = new StorageService();
+
 const UserService = {
   setUser(user: User) {
-    StorageService.set("user", user);
+    storageService.set("user", user);
   },
 
   getUser(): User | null {
-    return StorageService.get("user");
+    return storageService.get("user");
   },
 
   getAccessToken(): string | null {
@@ -58,7 +60,7 @@ const UserService = {
   },
 
   logout() {
-    StorageService.remove("user");
+    storageService.remove("user");
   }
 };
 
