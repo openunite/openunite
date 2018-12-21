@@ -14,22 +14,11 @@ interface User {
 
 const UserService = {
   setUser(user: User) {
-    StorageService.set("user", JSON.stringify(user));
+    StorageService.set("user", user);
   },
 
   getUser(): User | null {
-    const userItem = StorageService.get("user");
-
-    if (userItem) {
-      try {
-        const user = JSON.parse(userItem);
-        return user;
-      } catch (e) {
-        console.error(e);
-      }
-    }
-
-    return null;
+    return StorageService.get("user");
   },
 
   getAccessToken(): string | null {

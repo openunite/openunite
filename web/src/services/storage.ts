@@ -1,17 +1,17 @@
 const StorageService = {
-  get(key: string) {
-    return localStorage.getItem(key);
+  get(key: string): any {
+    return JSON.parse(localStorage.getItem(key) || 'null');
   },
 
-  set(key: string, value: string) {
-    localStorage.setItem(key, value);
+  set(key: string, value: any): void {
+    localStorage.setItem(key, JSON.stringify(value));
   },
 
-  remove(key: string) {
+  remove(key: string): void {
     localStorage.removeItem(key);
   },
 
-  clear() {
+  clear(): void {
     localStorage.clear();
   }
 };
