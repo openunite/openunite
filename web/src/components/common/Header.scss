@@ -1,4 +1,4 @@
-@import '../../../node_modules/@blueprintjs/core/lib/scss/variables';
+@import "../../../node_modules/@blueprintjs/core/lib/scss/variables";
 
 .logo {
   font-weight: bold;
@@ -7,4 +7,10 @@
 
 .logo:hover {
   text-decoration: none;
+}
+
+.bp3-popover-wrapper {
+  button:focus {
+    outline: none !important;
+  }
 }
