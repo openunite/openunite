@@ -1,13 +1,27 @@
-import React, { Component } from 'react';
-import Header from '../../components/common/Header'
-import Footer from '../../components/common/Footer'
-import EventSearch from '../../components/event/EventSearch';
-import EventList from '../../components/event/EventList';
-import EventCalendar from '../../components/event/EventCalendar';
+import React, { Component } from "react";
+import Header from "../../components/common/Header";
+import Footer from "../../components/common/Footer";
+import EventSearch from "../../components/event/EventSearch";
+import EventList from "../../components/event/EventList";
+import EventCalendar from "../../components/event/EventCalendar";
+import { EventService } from "../../services/event";
 
-import './HomePage.scss';
+import "./HomePage.scss";
 
 class HomePage extends Component {
+  state = {
+    events: []
+  };
+
+  async componentDidMount() {
+    const eventService = new EventService();
+    const events = await eventService.getEvents();
+
+    if (events) {
+      this.setState({ events });
+    }
+  }
+
   render() {
     return (
       <div>
@@ -24,7 +38,7 @@ class HomePage extends Component {
 
         <div className="flexContainer wrapper">
           <main>
-            <EventList />
+            <EventList events={this.state.events} />
           </main>
 
           <aside>
