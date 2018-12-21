@@ -10,7 +10,7 @@ import {
 } from "@openunite/test";
 import { EventService } from "@openunite/src/services/EventService";
 
-describe("/events", () => {
+describe("GET /events", () => {
   let server: Server;
   let request: supertest.SuperTest<supertest.Test>;
   let FakeEventService: td.TestDoubleConstructor<EventService>;
@@ -75,6 +75,35 @@ describe("/events", () => {
 
       // assert
       response.body.should.match(eventsResponse);
+    });
+  });
+});
+
+describe("POST /events", () => {
+  let server: Server;
+  let request: supertest.SuperTest<supertest.Test>;
+  let FakeEventService: td.TestDoubleConstructor<EventService>;
+
+  beforeEach(() => {
+    FakeEventService = td.constructor(EventService);
+    const eventController = createTestEventController(new FakeEventService());
+    const router = createTestRouter({ eventController });
+    const app = createTestServer(router);
+    server = app.listen(testHttpPort);
+    request = supertest(server);
+  });
+
+  afterEach(() => {
+    server.close();
+  });
+
+  describe("When the request has an invalid token", () => {
+    it("should return a 401 response", async () => {
+      // act
+      const response = await request.post("/events");
+
+      // assert
+      response.status.should.equal(401);
     });
   });
 });

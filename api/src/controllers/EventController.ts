@@ -23,6 +23,8 @@ class EventController {
 
     ctx.body = event;
   }
+
+  async create() {}
 }
 
 export { EventController };
