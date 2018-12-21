@@ -16,6 +16,20 @@ export class EventService {
     return events.map((event: any) => ({
       ...event,
       date: moment(event.date)
-    }));
+    }))
+  }
+
+  async create(newEvent: any) {
+    const api = new ApiService();
+
+    let result;
+    try {
+      result = await api.post("events", newEvent);
+    } catch (err) {
+      console.log(err);
+      return;
+    }
+
+    return result;
   }
 }
