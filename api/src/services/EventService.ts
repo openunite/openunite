@@ -83,6 +83,13 @@ class EventService {
     const slug =
       newEvent.slug || newEvent.title.toLowerCase().replace(/[^a-z0-9-]/g, "-");
 
+    newEvent.group = {
+      id: 1,
+      name: "Nardoz Berlin"
+    };
+
+    dummyResponse.push(newEvent);
+
     return { slug };
   }
 }
