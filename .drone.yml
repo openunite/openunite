@@ -61,6 +61,11 @@ steps:
   commands:
     - cd web
     - npm run build
+- name: run-tests
+  image: node:10
+  commands:
+    - cd web
+    - npm test -- --ci --coverage
 
 trigger:
   event:
