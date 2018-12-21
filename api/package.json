@@ -6,6 +6,7 @@
   "scripts": {
     "start": "nodemon",
     "tdd": "mocha --opts test/tdd.opts",
+    "tdd+debug": "mocha --opts test/tdd.opts --inspect-brk",
     "test": "mocha --opts test/default.opts",
     "lint": "eslint \"**/*.ts\"",
     "lint+fix": "eslint --fix \"**/*.ts\"",
@@ -65,6 +66,7 @@
     "should": "13.2.3",
     "supertest": "3.3.0",
     "testdouble": "3.9.1",
+    "tsconfig-paths": "3.7.0",
     "typescript": "3.2.2",
     "typescript-eslint-parser": "21.0.2"
   },
