@@ -7,7 +7,7 @@ export default class ApiService {
     const accessToken = UserService.getAccessToken();
 
     if (accessToken !== null) {
-      this.headers.Authentication = `Bearer ${accessToken}`;
+      this.headers.Authorization = `Bearer ${accessToken}`;
     }
   }
 
