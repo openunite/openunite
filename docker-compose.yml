@@ -1,0 +1,18 @@
+version: "3.7"
+
+services:
+  api:
+    build:
+      context: ./api
+    ports:
+      - "8000:80"
+    restart: always
+    environment:
+      ADMIN_EMAIL: admin@localhost
+      ADMIN_PASSWORD: password
+      PRIVATE_KEY: secret
+  web:
+    build:
+      context: ./web
+    ports:
+      - "3000:80"

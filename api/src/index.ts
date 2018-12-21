@@ -23,7 +23,7 @@ async function start() {
 
   const router = createRouter(authController, eventController);
   const server = createServer(router);
-  server.listen(8000);
+  server.listen(80);
 }
 
 start();
