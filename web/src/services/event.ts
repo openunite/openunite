@@ -1,13 +1,13 @@
 import ApiService from "./api";
-import moment from 'moment';
+import moment from "moment";
 
-const EventService = {
+export class EventService {
   async getEvents() {
     const api = new ApiService();
-
     let events;
+
     try {
-      events = await api.get("events");
+      events = await api.get(`events`);
     } catch (err) {
       console.log(err);
       return;
@@ -16,9 +16,6 @@ const EventService = {
     return events.map((event: any) => ({
       ...event,
       date: moment(event.date)
-    }))
-
+    }));
   }
-};
-
-export default EventService;
+}
