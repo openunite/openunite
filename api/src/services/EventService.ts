@@ -3,7 +3,7 @@ const dummyResponse = [
     id: 1,
     slug: "nardoz--6--the-importance-of-asking-questions-+-microservices",
     title: "Nardoz #6: The importance of asking questions + Microservices",
-    date: new Date().toISOString(),
+    date: new Date("2018-11-15").toISOString(),
     attendees: 9,
     description: `
       It's time for a new Nardoz! 🎉 AGENDA 18.30 - Arrival, networking 19.00 -
@@ -20,7 +20,7 @@ const dummyResponse = [
     id: 2,
     slug: "nardoz--5--introduction-to-kubernetes",
     title: "Nardoz #5: Introduction to Kubernetes",
-    date: new Date().toISOString(),
+    date: new Date("2018-05-11").toISOString(),
     attendees: 13,
     description: `
       Raffaele will give us an introduction to Kubernetes
@@ -37,7 +37,7 @@ const dummyResponse = [
     id: 3,
     slug: "nardoz--4--building-a-data-science-project-from-scratch",
     title: "Nardoz #4: Building a Data Science Project From Scratch",
-    date: new Date().toISOString(),
+    date: new Date("2018-04-22").toISOString(),
     attendees: 18,
     description: `
       What we'll do
@@ -56,7 +56,7 @@ const dummyResponse = [
     id: 4,
     slug: "nardoz--3--zalenium-+-code-style-is-dead",
     title: "Nardoz #3: Zalenium + Code Style is Dead",
-    date: new Date().toISOString(),
+    date: new Date("2018-03-14").toISOString(),
     attendees: 23,
     description: `
       Agenda: 18.45 - 19.30: Grab a beer and something to eat + intro.
@@ -72,7 +72,9 @@ const dummyResponse = [
 
 class EventService {
   async findAll() {
-    return dummyResponse;
+    return dummyResponse
+      .slice()
+      .sort((one, another) => (one.date > another.date ? -1 : 1));
   }
 
   async findOne(slug: string) {
