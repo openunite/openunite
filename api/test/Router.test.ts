@@ -11,7 +11,8 @@ describe("Router", () => {
         login: td.function()
       };
       const eventController = {
-        listAll: td.function()
+        listAll: td.function(),
+        getDetail: td.function()
       };
 
       // act
