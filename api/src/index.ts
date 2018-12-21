@@ -5,7 +5,7 @@ import { AuthService } from "./services/AuthService";
 import { EventService } from "./services/EventService";
 import { EventController } from "./controllers/EventController";
 
-async function start() {
+async function start(httpPort: number) {
   const adminEmail = process.env.ADMIN_EMAIL || "admin@localhost";
   const adminPassword = process.env.ADMIN_PASSWORD || "password";
   const privateKey = process.env.PRIVATE_KEY || "secret";
@@ -23,7 +23,9 @@ async function start() {
 
   const router = createRouter(authController, eventController);
   const server = createServer(router);
-  server.listen(8000);
+
+  server.listen(httpPort);
 }
 
-start();
+const httpPort = Number(process.env.HTTP_PORT || 8000);
+start(httpPort);
