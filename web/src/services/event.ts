@@ -10,6 +10,7 @@ const EventService = {
       events = await api.get("events");
     } catch (err) {
       console.log(err);
+      return;
     }
 
     return events.map((event: any) => ({
