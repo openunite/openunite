@@ -52,9 +52,20 @@ const UserService = {
     this.setUser(user);
   },
 
-  login(credentials: Credentials) {
+  async login(credentials: Credentials) {
     const api = new ApiService();
-    return api.post("login", credentials);
+
+    try {
+      const result = await api.post("login", credentials);
+
+      if (result.token) {
+        this.setAccessToken(result.token);
+      }
+
+      return result;
+    } catch (err) {
+      console.log(err);
+    }
   },
 
   logout() {

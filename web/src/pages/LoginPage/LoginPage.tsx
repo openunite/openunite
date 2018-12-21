@@ -33,8 +33,6 @@ class LoginPage extends Component {
         state.error = result.error;
         this.setState(state);
       } else {
-        UserService.setAccessToken(result.token);
-
         // FIXME
         window.location.href = "/";
       }
