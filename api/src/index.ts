@@ -4,12 +4,12 @@ import { AuthController } from "./controllers/AuthController";
 import { AuthService } from "./services/AuthService";
 
 async function start() {
-  const adminUser = process.env.ADMIN_USER || "admin";
-  const adminPassword = process.env.ADMIN_USER || "password";
+  const adminEmail = process.env.ADMIN_EMAIL || "admin@localhost";
+  const adminPassword = process.env.ADMIN_PASSWORD || "password";
   const privateKey = process.env.PRIVATE_KEY || "secret";
 
   const credentials = {
-    username: adminUser,
+    email: adminEmail,
     password: adminPassword
   };
 

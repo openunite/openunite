@@ -9,21 +9,21 @@ class AuthController {
   }
 
   async login(ctx: Koa.Context) {
-    const { username = "", password = "" } = ctx.request.body;
+    const { email = "", password = "" } = ctx.request.body;
 
-    if (username.trim() === "" || password.trim() === "") {
+    if (email.trim() === "" || password.trim() === "") {
       ctx.status = 400;
-      ctx.body = { error: "Missing username and/or password" };
+      ctx.body = { error: "Missing email and/or password" };
       return;
     }
 
-    const { token } = await this.authService.login({ username, password });
+    const { token } = await this.authService.login({ email, password });
 
     if (token) {
       ctx.body = { token };
     } else {
       ctx.status = 401;
-      ctx.body = { error: "Invalid User or Password" };
+      ctx.body = { error: "Invalid Email or Password" };
     }
   }
 }

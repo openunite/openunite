@@ -4,7 +4,7 @@ import JWT from "../models/login/JWT";
 import jsonwebtoken from "jsonwebtoken";
 
 type Credentials = {
-  username: string;
+  email: string;
   password: string;
 };
 
@@ -22,9 +22,9 @@ class AuthService {
   }
 
   async login(userLogin: UserLogin): Promise<LoginResult> {
-    const { username, password } = this.credentials;
+    const { email, password } = this.credentials;
 
-    if (userLogin.username === username && userLogin.password === password) {
+    if (userLogin.email === email && userLogin.password === password) {
       let payload: JWT = {
         sub: 1,
         name: "admin",
