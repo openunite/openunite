@@ -78,6 +78,13 @@ class EventService {
   async findOne(slug: string) {
     return dummyResponse.find((event) => event.slug === slug);
   }
+
+  async insert(newEvent: any) {
+    const slug =
+      newEvent.slug || newEvent.title.toLowerCase().replace(/[^a-z0-9-]/g, "-");
+
+    return { slug };
+  }
 }
 
 export { EventService };

@@ -10,7 +10,7 @@ import {
 } from "@openunite/test";
 import { EventService } from "@openunite/src/services/EventService";
 
-describe("/events/:slug", () => {
+describe("GET /events/:slug", () => {
   let server: Server;
   let request: supertest.SuperTest<supertest.Test>;
   let FakeEventService: td.TestDoubleConstructor<EventService>;

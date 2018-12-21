@@ -17,7 +17,7 @@ const testCredentials = {
 
 const testJwtSecret = "test-secret";
 
-describe("/login", () => {
+describe("POST /login", () => {
   let server: Server;
   let request: supertest.SuperTest<supertest.Test>;
 
