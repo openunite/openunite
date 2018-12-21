@@ -32,6 +32,7 @@ describe("Set and get the same value and type", () => {
   tests.forEach((test, idx) => {
     it(test.it, () => {
       const itWasSaved = storageService.set(`test${idx}`, test.value);
+      expect(test.value !== null && test.expected === null).toEqual(!itWasSaved);
       expect(storageService.get(`test${idx}`)).toEqual(test.expected);
     });
   });
