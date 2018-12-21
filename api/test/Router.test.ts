@@ -10,9 +10,15 @@ describe("Router", () => {
       const authController = {
         login: td.function()
       };
+      const eventController = {
+        listAll: td.function()
+      };
 
       // act
-      const router = createRouter(authController as any);
+      const router = createRouter(
+        authController as any,
+        eventController as any
+      );
 
       // assert
       router.should.be.instanceOf(KoaRouter);

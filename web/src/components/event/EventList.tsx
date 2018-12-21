@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Card } from '@blueprintjs/core';
-import { demoData, GroupEvent } from './event-demo';
+import EventService from "../../services/event";
+import { GroupEvent } from './event-demo';
 
 import './EventList.scss';
 
@@ -9,8 +10,13 @@ class EventList extends Component {
     events: [],
   }
 
-  componentDidMount() {
-    this.setState({ events: demoData });
+  async componentDidMount() {
+    const events = await EventService.getEvents();
+
+    console.log(events);
+    if (events) {
+      this.setState({ events });
+    }
   }
 
   render() {

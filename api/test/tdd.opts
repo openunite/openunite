@@ -1,4 +1,5 @@
 --require ts-node/register
+--require tsconfig-paths/register
 --async-only
 --check-leaks
 --allow-uncaught
@@ -6,4 +7,4 @@
 --watch-extensions ts
 --bail
 --recursive
-test/*.ts
+test/**/*.ts
