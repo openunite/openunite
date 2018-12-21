@@ -8,6 +8,7 @@
     "tdd": "mocha --opts test/tdd.opts",
     "tdd+debug": "mocha --opts test/tdd.opts --inspect-brk",
     "test": "mocha --opts test/default.opts",
+    "ci:coverage": "nyc --reporter=json npm test",
     "lint": "eslint \"**/*.ts\"",
     "lint+fix": "eslint --fix \"**/*.ts\"",
     "format": "prettier --write \"**/*.{js,ts,json}\""
@@ -47,6 +48,21 @@
       "no-undef": "off"
     }
   },
+  "nyc": {
+    "extension": [
+      ".ts"
+    ],
+    "exclude": [
+      "coverage",
+      "test",
+      "src/models",
+      "**/*.d.ts"
+    ],
+    "reporter": [
+      "html"
+    ],
+    "all": true
+  },
   "devDependencies": {
     "@types/jsonwebtoken": "8.3.0",
     "@types/koa": "2.0.47",
@@ -55,6 +71,7 @@
     "@types/mocha": "5.2.5",
     "@types/node": "10.12.17",
     "@types/supertest": "2.0.7",
+    "codecov": "3.1.0",
     "eslint": "5.10.0",
     "eslint-config-prettier": "3.3.0",
     "eslint-plugin-typescript": "0.14.0",
@@ -62,8 +79,10 @@
     "lint-staged": "8.1.0",
     "mocha": "5.2.0",
     "nodemon": "1.18.9",
+    "nyc": "13.1.0",
     "prettier": "1.15.3",
     "should": "13.2.3",
+    "source-map-support": "0.5.9",
     "supertest": "3.3.0",
     "testdouble": "3.9.1",
     "tsconfig-paths": "3.7.0",

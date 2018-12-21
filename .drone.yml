@@ -15,6 +15,24 @@ steps:
   commands:
     - cd api
     - npm test
+- name: run-coverage
+  image: node:10
+  commands:
+    - cd api
+    - ./node_modules/.bin/nyc npm test
+    - ./node_modules/.bin/nyc report --reporter=text-lcov > coverage.lcov
+    - ./node_modules/.bin/nyc report --reporter=text
+- name: upload-coverage-report
+  when:
+    repo:
+      - openunite/openunite
+  image: node:10
+  environment:
+    CODECOV_TOKEN:
+      from_secret: codecov_token
+  commands:
+    - cd api
+    - ./node_modules/.bin/codecov --disable=gcov -f coverage.lcov
 
 trigger:
   event:
