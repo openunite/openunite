@@ -42,15 +42,23 @@ class Header extends Component {
           </Navbar.Group>
 
           <Navbar.Group align="right">
-            <Link
-              to="/schedule"
-              className="bp3-button bp3-minimal"
-              style={{ fontWeight: "bold" }}
-            >
-              Schedule your event
+            {this.state.user.name ? (
+              <Link
+                to="/schedule"
+                className="bp3-button bp3-minimal"
+                style={{ fontWeight: "bold" }}
+              >
+                Schedule an event
+              </Link>
+            ) : (
+              ""
+            )}
+
+            <Link to="/events" className="bp3-button bp3-minimal">
+              Our events
             </Link>
             <Link to="/" className="bp3-button bp3-minimal">
-              Explore events
+              Explore
             </Link>
             <Navbar.Divider />
             {this.state.user.name ? (

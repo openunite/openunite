@@ -16,8 +16,9 @@ function createRouter(
     ctx.status = 200;
   });
 
-  // Events endpoint
+  // Events endpoints
   router.get("/events", eventController.listAll.bind(eventController));
+  router.get("/events/:slug", eventController.getDetail.bind(eventController));
 
   return router;
 }

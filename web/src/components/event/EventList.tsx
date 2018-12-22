@@ -1,31 +1,21 @@
-import React, { Component } from 'react';
-import { Card } from '@blueprintjs/core';
-import EventService from "../../services/event";
-import { GroupEvent } from './event-demo';
+import React, { Component } from "react";
+import { Card } from "@blueprintjs/core";
+import { GroupEvent } from "./event-demo";
 
-import './EventList.scss';
+import "./EventList.scss";
 
-class EventList extends Component {
-  state = {
-    events: [],
-  }
+interface EventListProps {
+  events: GroupEvent[];
+}
 
-  async componentDidMount() {
-    const events = await EventService.getEvents();
-
-    console.log(events);
-    if (events) {
-      this.setState({ events });
-    }
-  }
-
+class EventList extends Component<EventListProps> {
   render() {
     return (
       <div>
-        {this.state.events.map((event: GroupEvent) => {
+        {this.props.events.map((event: GroupEvent) => {
           return (
             <Card key={event.id} className="eventItem">
-              <span className="date">{event.date.format('dddd, MMMM M ')}</span>
+              <span className="date">{event.date.format("dddd, MMMM M ")}</span>
               <h5>{event.group.name}</h5>
               <h2>{event.title}</h2>
               <p>{event.description}</p>
