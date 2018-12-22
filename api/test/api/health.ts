@@ -3,7 +3,7 @@ import supertest from "supertest";
 import { Server } from "http";
 import { testHttpPort, createTestServer } from "@openunite/test";
 
-describe("/health", () => {
+describe("GET /health", () => {
   let server: Server;
   let request: supertest.SuperTest<supertest.Test>;
 

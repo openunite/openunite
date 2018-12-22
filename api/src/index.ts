@@ -4,6 +4,7 @@ import { AuthController } from "./controllers/AuthController";
 import { AuthService } from "./services/AuthService";
 import { EventService } from "./services/EventService";
 import { EventController } from "./controllers/EventController";
+import { TokenService } from "./services/TokenService";
 
 async function start(httpPort: number) {
   const adminEmail = process.env.ADMIN_EMAIL || "admin@localhost";
@@ -15,7 +16,8 @@ async function start(httpPort: number) {
     password: adminPassword
   };
 
-  const authService = new AuthService(credentials, privateKey);
+  const tokenService = new TokenService(privateKey);
+  const authService = new AuthService(credentials, tokenService);
   const authController = new AuthController(authService);
 
   const eventService = new EventService();

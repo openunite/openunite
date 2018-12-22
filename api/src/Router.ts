@@ -20,6 +20,11 @@ function createRouter(
   router.get("/events", eventController.listAll.bind(eventController));
   router.get("/events/:slug", eventController.getDetail.bind(eventController));
 
+  // Authentication required endpoints
+  router.use(authController.authorizeMiddleware.bind(authController));
+
+  router.post("/events", eventController.create.bind(eventController));
+
   return router;
 }
 

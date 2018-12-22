@@ -8,11 +8,13 @@ describe("Router", () => {
     it("should return an instance of Koa router", (done) => {
       // arrange
       const authController = {
-        login: td.function()
+        login: td.function(),
+        authorizeMiddleware: td.function()
       };
       const eventController = {
         listAll: td.function(),
-        getDetail: td.function()
+        getDetail: td.function(),
+        create: td.function()
       };
 
       // act
