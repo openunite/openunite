@@ -10,7 +10,9 @@
     "test": "mocha --opts test/default.opts",
     "lint": "eslint \"**/*.ts\"",
     "lint+fix": "eslint --fix \"**/*.ts\"",
-    "format": "prettier --write \"**/*.{js,ts,json}\""
+    "format": "prettier --write \"**/*.{js,ts,json}\"",
+    "db:migrate": "ts-node ./db/migration_cli.ts --migrate",
+    "db:reset": "ts-node ./db/migration_cli.ts --reset"
   },
   "husky": {
     "hooks": {
@@ -62,6 +64,7 @@
     "lint-staged": "8.1.0",
     "mocha": "5.2.0",
     "nodemon": "1.18.9",
+    "postgres-migrations": "2.0.3",
     "prettier": "1.15.3",
     "should": "13.2.3",
     "supertest": "3.3.0",
@@ -78,6 +81,7 @@
     "koa": "2.6.2",
     "koa-bodyparser": "4.2.1",
     "koa-router": "7.4.0",
-    "ts-node": "7.0.1"
+    "ts-node": "7.0.1",
+    "typeorm": "0.2.9"
   }
 }

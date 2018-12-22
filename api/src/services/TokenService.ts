@@ -11,11 +11,8 @@ class TokenService {
     this.jwtSecret = jwtSecret;
   }
 
-  async create(subject: string, payload: Object = {}): Promise<string> {
-    const options: jsonwebtoken.SignOptions = {
-      subject,
-      ...defaultJwtOptions
-    };
+  async create(payload: Object = {}): Promise<string> {
+    const options: jsonwebtoken.SignOptions = defaultJwtOptions;
 
     return jsonwebtoken.sign(payload, this.jwtSecret, options);
   }
