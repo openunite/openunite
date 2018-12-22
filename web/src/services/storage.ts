@@ -6,7 +6,11 @@ class StorageService {
   ];
 
   get(key: string): any {
-    return JSON.parse(localStorage.getItem(key) || 'null');
+    try {
+      return JSON.parse(localStorage.getItem(key) || 'null');
+    } catch (e) {
+      return null;
+    }
   }
 
   set(key: string, value: any): boolean {
