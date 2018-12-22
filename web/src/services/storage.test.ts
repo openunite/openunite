@@ -3,7 +3,7 @@ import StorageService from "./storage";
 
 const storageService = new StorageService();
 
-describe("Set and get the same value and type", () => {
+describe("Set and get the same value and type, objects return obj.toJSON()", () => {
   const tests: { it: string; value: any; expected: any; isNonStorable?: boolean; }[] = [
     { it: "null", value: null, expected: null },
     { it: "positive number", value: 1, expected: 1 },
@@ -31,9 +31,44 @@ describe("Set and get the same value and type", () => {
 
   tests.forEach((test, idx) => {
     it(test.it, () => {
-      const itWasSaved = storageService.set(`test${idx}`, test.value);
+      const itWasSaved = storageService.set(`key${idx}`, test.value);
       expect(test.value !== null && test.expected === null).toEqual(!itWasSaved);
-      expect(storageService.get(`test${idx}`)).toEqual(test.expected);
+      expect(storageService.get(`key${idx}`)).toEqual(test.expected);
     });
+  });
+
+  storageService.clear();
+});
+
+describe("Remove one", () => {
+  const key = "key";
+  const value = "value";
+
+  it("a set value", () => {
+    storageService.set(key, value);
+    expect(storageService.get(key)).toEqual(value);
+
+    storageService.remove(key);
+    expect(storageService.get(key)).toEqual(null);
+  });
+
+  it("an unset value", () => {
+    storageService.clear();
+    storageService.remove(key);
+    expect(storageService.get(key)).toEqual(null);
+  });
+});
+
+describe("Clear all", () => {
+  it("10 set values", () => {
+    for (let i = 0; i < 10; i++) {
+      storageService.set(`key${i}`, i);
+    }
+
+    storageService.clear();
+
+    for (let i = 0; i < 10; i++) {
+      expect(storageService.get(`key${i}`)).toEqual(null);
+    }
   });
 });
