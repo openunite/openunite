@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import HomePage from "./pages/HomePage/HomePage";
 import ScheduleEventPage from "./pages/ScheduleEventPage/ScheduleEventPage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import EventListPage from "./pages/EventListPage/EventListPage";
@@ -16,10 +15,11 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <Route exact path="/" component={HomePage} />
+          <Route exact path="/" component={EventListPage} />
           <Route exact path="/schedule" component={ScheduleEventPage} />
           <Route exact path="/login" component={LoginPage} />
-          <Route exact path="/events" component={EventListPage} />
+          <Route path="/events/:type" component={EventListPage} />
+          <Route path="/events/:type" component={EventListPage} />
         </div>
       </Router>
     );
