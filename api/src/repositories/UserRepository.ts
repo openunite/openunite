@@ -4,17 +4,10 @@ import { Connection } from "typeorm/connection/Connection";
 import { Repository as PGRepository } from "typeorm/repository/Repository";
 import { UserDao } from "./entities/UserDao";
 
-abstract class UserRepository implements Repository<string, User> {
-  abstract save(user: User): Promise<User>;
-  abstract get(email: string): Promise<User | undefined>;
-  abstract delete(email: string): Promise<boolean>;
-  abstract findOne(query: object): Promise<User | undefined>;
-  abstract findAll(query: object): Promise<Array<User>>;
-}
+abstract class UserRepository extends Repository<string, User> {}
 
 class PGUserRepository implements UserRepository {
   private repository: PGRepository<UserDao>;
-
   constructor(connection: Connection) {
     this.repository = connection.manager.getRepository(UserDao);
   }

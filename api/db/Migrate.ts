@@ -2,7 +2,7 @@ import { createDb, migrate as postgresMigrate } from "postgres-migrations";
 import path from "path";
 
 const config = {
-  logger: (log: String) => {} //console.log(log)
+  logger: (log: String) => console.log(log) // eslint-disable-line no-console
 };
 
 const db = createDb(
@@ -32,10 +32,10 @@ export function migrate() {
     );
   })
     .then(() => {
-      //console.log("openunitedb migrated finished");
+      console.log("openunitedb migrated finished"); // eslint-disable-line no-console
     })
     .catch((err) => {
-      //console.log(err);
+      console.log(err); // eslint-disable-line no-console
     });
 }
 
