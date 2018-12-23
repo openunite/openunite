@@ -3,9 +3,10 @@ import { Button, Label } from "@blueprintjs/core";
 import Header from "../../components/common/Header";
 import Footer from "../../components/common/Footer";
 import UserService from "../../services/user";
+import { withRouter, RouteComponentProps } from "react-router-dom";
 import "./LoginPage.scss";
 
-class LoginPage extends Component {
+class LoginPage extends Component<RouteComponentProps<any>> {
   state = {
     form: {
       email: "",
@@ -33,8 +34,7 @@ class LoginPage extends Component {
         state.error = result.error;
         this.setState(state);
       } else {
-        // FIXME
-        window.location.href = "/";
+        this.props.history.push("/");
       }
     } catch (err) {
       console.error(err);
@@ -94,4 +94,4 @@ class LoginPage extends Component {
   }
 }
 
-export default LoginPage;
+export default withRouter(LoginPage);
