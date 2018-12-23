@@ -1,23 +1,56 @@
-import React, { Component } from 'react';
-import { ButtonGroup, Divider} from '@blueprintjs/core';
-import { Link } from 'react-router-dom';
+import React, { Component } from "react";
+import { ButtonGroup, Button, Divider } from "@blueprintjs/core";
+import { Link } from "react-router-dom";
 
-import './Footer.scss';
+import "./Footer.scss";
 
 class Header extends Component {
   render() {
     return (
       <footer>
         <ButtonGroup>
-          <Link to="/help" className="bp3-button bp3-minimal">Help</Link>
-          <Link to="/about" className="bp3-button bp3-minimal">About OpenUnite</Link>
-          <Link to="/developers/contribute" className="bp3-button bp3-minimal">Contribute to the project</Link>
-          <Link to="/developers" className="bp3-button bp3-minimal">Developers</Link>
+          <a
+            href="https://github.com/openunite/openunite/wiki/Help"
+            target="_blank"
+            className="bp3-button bp3-minimal"
+          >
+            Help
+          </a>
+          <a
+            href="https://github.com/openunite/openunite/wiki/About"
+            target="_blank"
+            className="bp3-button bp3-minimal"
+          >
+            About
+          </a>
+          <a
+            href="https://github.com/openunite/openunite/wiki/Contribute"
+            target="_blank"
+            className="bp3-button bp3-minimal"
+          >
+            Contribute
+          </a>
+          <a
+            href="https://github.com/openunite/openunite"
+            target="_blank"
+            className="bp3-button bp3-minimal"
+          >
+            Developers
+          </a>
           <Divider />
-          <Link to="/terms" className="bp3-button bp3-minimal">Terms</Link>
-          <Link to="/privacy" className="bp3-button bp3-minimal">Privacy</Link>
+          <Button minimal disabled>
+            Terms
+          </Button>
+          <Button minimal disabled>
+            Privacy
+          </Button>
         </ButtonGroup>
-        <p>Powered by <a href="http://openunite.org" target="_blank">OpenUnite</a></p>
+        <p>
+          Powered by{" "}
+          <a href="http://openunite.org" target="_blank">
+            OpenUnite
+          </a>
+        </p>
       </footer>
     );
   }
