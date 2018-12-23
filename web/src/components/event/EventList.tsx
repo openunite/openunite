@@ -1,8 +1,20 @@
 import React, { Component } from "react";
 import { Card } from "@blueprintjs/core";
-import { GroupEvent } from "./event-demo";
-
 import "./EventList.scss";
+
+export interface Group {
+  id: number;
+  name: string;
+}
+
+export interface GroupEvent {
+  id: number;
+  title: string;
+  date: any;
+  attendees: number;
+  description: string;
+  group: Group;
+}
 
 interface EventListProps {
   events: GroupEvent[];
