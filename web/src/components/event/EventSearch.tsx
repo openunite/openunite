@@ -55,7 +55,7 @@ class EventSearch extends Component {
   render() {
     return (
       <div>
-        <div className="searchContainer">
+        <div className="search-container">
           <InputGroup
             large
             placeholder="Find an event"
