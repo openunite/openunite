@@ -22,12 +22,12 @@ class EventListPage extends Component {
 
   render() {
     return (
-      <div className="eventListPage">
+      <div className="event-list-page">
         <header>
           <Header />
         </header>
 
-        <div className="flexContainer wrapper">
+        <div className="flex-container wrapper">
           <main>
             <h2>Next Events</h2>
             <EventList events={this.state.futureEvents} />

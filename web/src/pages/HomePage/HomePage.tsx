@@ -27,7 +27,7 @@ class HomePage extends Component {
       <div>
         <header>
           <Header />
-          
+
           <div className="hero">
             <div className="wrapper">
               <h1>Explore events nearby</h1>
@@ -36,7 +36,7 @@ class HomePage extends Component {
           </div>
         </header>
 
-        <div className="flexContainer wrapper">
+        <div className="flex-container wrapper">
           <main>
             <EventList events={this.state.events} />
           </main>
@@ -45,7 +45,7 @@ class HomePage extends Component {
             <EventCalendar />
           </aside>
         </div>
-        
+
         <Footer />
       </div>
     );
