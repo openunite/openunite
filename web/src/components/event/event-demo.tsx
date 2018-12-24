@@ -1,4 +1,4 @@
-import moment from 'moment';
+import moment from "moment";
 
 export interface Group {
   id: number;
@@ -8,16 +8,18 @@ export interface Group {
 export interface GroupEvent {
   id: number;
   title: string;
+  slug: string;
   date: any;
   attendees: number;
-  description: string,
-  group: Group,
+  description: string;
+  group: Group;
 }
 
 export const demoData: GroupEvent[] = [
   {
     id: 1,
-    title: 'Nardoz #6: The importance of asking questions + Microservices',
+    title: "Nardoz #6: The importance of asking questions + Microservices",
+    slug: "",
     date: moment(),
     attendees: 9,
     description: `
@@ -28,12 +30,13 @@ export const demoData: GroupEvent[] = [
     `,
     group: {
       id: 1,
-      name: 'Nardoz Berlin',
-    },
+      name: "Nardoz Berlin"
+    }
   },
   {
     id: 2,
-    title: 'Nardoz #5: Introduction to Kubernetes',
+    title: "Nardoz #5: Introduction to Kubernetes",
+    slug: "",
     date: moment(),
     attendees: 13,
     description: `
@@ -44,12 +47,13 @@ export const demoData: GroupEvent[] = [
       `,
     group: {
       id: 1,
-      name: 'Nardoz Berlin',
-    },
+      name: "Nardoz Berlin"
+    }
   },
   {
     id: 3,
-    title: 'Nardoz #4: Building a Data Science Project From Scratch',
+    title: "Nardoz #4: Building a Data Science Project From Scratch",
+    slug: "",
     date: moment(),
     attendees: 18,
     description: `
@@ -62,12 +66,13 @@ export const demoData: GroupEvent[] = [
     `,
     group: {
       id: 1,
-      name: 'Nardoz Berlin',
-    },
+      name: "Nardoz Berlin"
+    }
   },
   {
     id: 4,
-    title: 'Nardoz #3: Zalenium + Code Style is Dead',
+    title: "Nardoz #3: Zalenium + Code Style is Dead",
+    slug: "",
     date: moment(),
     attendees: 23,
     description: `
@@ -77,7 +82,7 @@ export const demoData: GroupEvent[] = [
     `,
     group: {
       id: 1,
-      name: 'Nardoz Berlin',
-    },
-  },
+      name: "Nardoz Berlin"
+    }
+  }
 ];

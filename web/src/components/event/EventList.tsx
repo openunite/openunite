@@ -1,23 +1,40 @@
 import React, { Component } from "react";
 import { Card } from "@blueprintjs/core";
 import { GroupEvent } from "./event-demo";
+import { Link } from "react-router-dom";
+import { withRouter, RouteComponentProps } from "react-router-dom";
 
 import "./EventList.scss";
 
-interface EventListProps {
+type EventListProps = RouteComponentProps<any> & {
   events: GroupEvent[];
-}
+};
 
 class EventList extends Component<EventListProps> {
+  constructor(props: any) {
+    super(props);
+    this.goToEvent = this.goToEvent.bind(this);
+  }
+
+  goToEvent(slug: string) {
+    this.props.history.push(`/events/${slug}`);
+  }
+
   render() {
     return (
       <div>
         {this.props.events.map((event: GroupEvent) => {
           return (
-            <Card key={event.id} className="eventItem">
-              <span className="date">{event.date.format("dddd, MMMM M ")}</span>
+            <Card
+              key={event.id}
+              className="eventItem"
+              onClick={e => this.goToEvent(event.slug)}
+            >
+              <span className="date">{event.date.format("dddd, MMMM D")}</span>
               <h5>{event.group.name}</h5>
-              <h2>{event.title}</h2>
+              <h2>
+                <Link to={`/events/${event.slug}`}>{event.title}</Link>
+              </h2>
               <p>{event.description}</p>
             </Card>
           );
@@ -27,4 +44,4 @@ class EventList extends Component<EventListProps> {
   }
 }
 
-export default EventList;
+export default withRouter(EventList);
