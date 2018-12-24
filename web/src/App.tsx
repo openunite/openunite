@@ -4,7 +4,8 @@ import ScheduleEventPage from "./pages/ScheduleEventPage/ScheduleEventPage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import EventListPage from "./pages/EventListPage/EventListPage";
 import EventDetailPage from "./pages/EventDetailPage/EventDetailPage";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import "normalize.css/normalize.css";
 import "@blueprintjs/core/lib/css/blueprint.css";
@@ -17,11 +18,14 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <Route exact path="/" component={HomePage} />
-          <Route exact path="/schedule" component={ScheduleEventPage} />
-          <Route exact path="/login" component={LoginPage} />
-          <Route exact path="/events" component={EventListPage} />
-          <Route path="/events/:slug" component={EventDetailPage} />
+          <Switch>
+            <Route exact path="/" component={HomePage} />
+            <Route exact path="/schedule" component={ScheduleEventPage} />
+            <Route exact path="/login" component={LoginPage} />
+            <Route exact path="/events" component={EventListPage} />
+            <Route path="/events/:slug" component={EventDetailPage} />
+            <Route component={NotFoundPage} />
+          </Switch>
         </div>
       </Router>
     );
