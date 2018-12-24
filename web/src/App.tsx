@@ -19,7 +19,6 @@ class App extends Component {
           <Route exact path="/schedule" component={ScheduleEventPage} />
           <Route exact path="/login" component={LoginPage} />
           <Route path="/events/:type" component={EventListPage} />
-          <Route path="/events/:type" component={EventListPage} />
         </div>
       </Router>
     );
