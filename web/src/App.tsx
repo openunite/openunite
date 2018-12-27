@@ -23,8 +23,8 @@ class App extends Component {
             <Route exact path="/schedule" component={ScheduleEventPage} />
             <Route exact path="/login" component={LoginPage} />
             <Route exact path="/logout" component={LogoutPage} />
-            <Route path="/events/:type" component={EventListPage} />
             <Route exact path="/events" component={EventListPage} />
+            <Route exact path="/past-events" component={EventListPage} />
             <Route path="/events/:slug" component={EventDetailPage} />
             <Route component={NotFoundPage} />
           </Switch>

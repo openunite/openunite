@@ -51,14 +51,14 @@ class Header extends Component<RouteComponentProps<any>> {
               : ""}
 
             <NavLink
-              to="/events/upcoming"
+              to="/events"
               className="bp3-button bp3-minimal"
               activeClassName="bp3-active"
             >
               Upcoming Events
             </NavLink>
             <NavLink
-              to="/events/past"
+              to="/past-events"
               className="bp3-button bp3-minimal"
               activeClassName="bp3-active"
             >
