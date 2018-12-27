@@ -6,9 +6,9 @@ import moment from "moment";
 
 import "./EventDetail.scss";
 
-type EventDetailProps = RouteComponentProps<any> & {
+interface EventDetailProps extends RouteComponentProps<any> {
   event: GroupEvent | null;
-};
+}
 
 class EventDetail extends Component<EventDetailProps> {
   state = {
