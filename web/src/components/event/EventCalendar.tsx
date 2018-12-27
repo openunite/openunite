@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { DatePicker } from "@blueprintjs/datetime";
-import { GroupEvent } from "./event-demo";
+import { GroupEvent } from "./EventList";
 import moment from "moment";
 
 type EventCalendarProps = {

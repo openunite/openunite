@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Card } from "@blueprintjs/core";
-import { GroupEvent } from "./event-demo";
+import { GroupEvent } from "./EventList";
 import { withRouter, RouteComponentProps } from "react-router-dom";
 import moment from "moment";
 
