@@ -1,11 +1,15 @@
 import React, { Component } from "react";
 import { Navbar, Popover, Menu, Button } from "@blueprintjs/core";
-import { Link } from "react-router-dom";
+import {
+  Link,
+  withRouter,
+  RouteComponentProps,
+  NavLink
+} from "react-router-dom";
 import UserService from "../../services/user";
-
 import "./Header.scss";
 
-class Header extends Component {
+class Header extends Component<RouteComponentProps<any>> {
   state = {
     user: {
       name: ""
@@ -16,17 +20,8 @@ class Header extends Component {
     const user = UserService.getUser();
 
     if (user) {
-      this.setState({
-        user
-      });
+      this.setState({ user });
     }
-  }
-
-  logout() {
-    UserService.logout();
-
-    // FIXME
-    window.location.href = "/";
   }
 
   render() {
@@ -42,32 +37,45 @@ class Header extends Component {
           </Navbar.Group>
 
           <Navbar.Group align="right">
-            {this.state.user.name ? (
-              <Link
-                to="/schedule"
-                className="bp3-button bp3-minimal"
-                style={{ fontWeight: "bold" }}
-              >
-                Schedule an event
-              </Link>
-            ) : (
-              ""
-            )}
+            {this.state.user.name
+              ? [
+                  <Link
+                    key="button"
+                    to="/schedule"
+                    className="bp3-button bp3-intent-primary"
+                  >
+                    Schedule an event
+                  </Link>,
+                  <Navbar.Divider key="divider" />
+                ]
+              : ""}
 
-            <Link to="/events" className="bp3-button bp3-minimal">
-              Our events
-            </Link>
-            <Link to="/" className="bp3-button bp3-minimal">
-              Explore
-            </Link>
+            <NavLink
+              to="/events/upcoming"
+              className="bp3-button bp3-minimal"
+              activeClassName="bp3-active"
+            >
+              Upcoming Events
+            </NavLink>
+            <NavLink
+              to="/events/past"
+              className="bp3-button bp3-minimal"
+              activeClassName="bp3-active"
+            >
+              Past Events
+            </NavLink>
+
             <Navbar.Divider />
+
             {this.state.user.name ? (
               <Popover>
                 <Button minimal icon="user">
                   {this.state.user.name}
                 </Button>
                 <Menu key="menu">
-                  <Menu.Item text="Logout" onClick={this.logout} />
+                  <Link to="/logout" className="bp3-menu-item">
+                    Logout
+                  </Link>
                 </Menu>
               </Popover>
             ) : (
@@ -82,4 +90,4 @@ class Header extends Component {
   }
 }
 
-export default Header;
+export default withRouter(Header);
