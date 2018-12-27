@@ -3,9 +3,9 @@ import { Card } from "@blueprintjs/core";
 import { Link, withRouter, RouteComponentProps } from "react-router-dom";
 import "./EventList.scss";
 
-type EventListProps = RouteComponentProps<any> & {
+interface EventListProps extends RouteComponentProps<any> {
   events: GroupEvent[];
-};
+}
 
 export interface Group {
   id: number;
