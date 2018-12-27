@@ -26,7 +26,6 @@ function saltPassword(password: string, salt: string) {
 }
 
 class AuthService {
-  private credentials: Credentials;
   private tokenService: TokenService;
 
   private userRepository: UserRepository;
@@ -36,9 +35,9 @@ class AuthService {
     tokenService: TokenService,
     userRepository: UserRepository
   ) {
-    this.credentials = credentials;
     this.tokenService = tokenService;
     this.userRepository = userRepository;
+    this.initializeAdmin(credentials);
   }
 
   async login(userLogin: UserLogin): Promise<LoginResult> {
@@ -75,8 +74,7 @@ class AuthService {
     this.userRepository.save(user);
   }
 
-  async initializeAdmin(): Promise<boolean> {
-    let credentials = this.credentials;
+  private async initializeAdmin(credentials: Credentials): Promise<boolean> {
     let existingAdmin = await this.userRepository.get(credentials.email);
     if (existingAdmin) {
       return false;

@@ -45,8 +45,6 @@ async function start(httpPort: number) {
   const eventService = new EventService();
   const eventController = new EventController(eventService);
 
-  authService.initializeAdmin();
-
   const router = createRouter(authController, eventController);
   const server = createServer(router);
 

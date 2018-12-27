@@ -5,7 +5,8 @@ import {
   testHttpPort,
   createTestServer,
   createTestRouter,
-  createTestAuthController
+  createTestAuthController,
+  mockedUserRepository
 } from "@openunite/test";
 import { AuthService } from "@openunite/src/services/AuthService";
 import { TokenService } from "@openunite/src/services/TokenService";
@@ -23,7 +24,11 @@ describe("POST /login", () => {
 
   beforeEach(() => {
     const tokenService = new TokenService(testJwtSecret);
-    const authService = new AuthService(testCredentials, tokenService);
+    const authService = new AuthService(
+      testCredentials,
+      tokenService,
+      mockedUserRepository
+    );
     const authController = createTestAuthController(authService);
     const router = createTestRouter({ authController });
     const app = createTestServer(router);
