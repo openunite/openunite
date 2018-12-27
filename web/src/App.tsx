@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import HomePage from "./pages/HomePage/HomePage";
 import ScheduleEventPage from "./pages/ScheduleEventPage/ScheduleEventPage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import LogoutPage from "./pages/LogoutPage/LogoutPage";
@@ -19,10 +18,11 @@ class App extends Component {
       <Router>
         <div>
           <Switch>
-            <Route exact path="/" component={HomePage} />
+            <Route exact path="/" component={EventListPage} />
             <Route exact path="/schedule" component={ScheduleEventPage} />
             <Route exact path="/login" component={LoginPage} />
             <Route exact path="/logout" component={LogoutPage} />
+            <Route path="/events/:type" component={EventListPage} />
             <Route exact path="/events" component={EventListPage} />
             <Route component={NotFoundPage} />
           </Switch>

@@ -54,7 +54,7 @@ class LoginPage extends Component<RouteComponentProps<any>> {
           <Header />
         </header>
 
-        <div className="flexContainer wrapper">
+        <div className="flex-container wrapper">
           <form className="login" onSubmit={this.handleSubmit}>
             <h2>Log in</h2>
             {this.state.error ? (

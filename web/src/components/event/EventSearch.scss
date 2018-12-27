@@ -1,6 +1,6 @@
-@import '../../../node_modules/@blueprintjs/core/lib/scss/variables';
+@import "../../../node_modules/@blueprintjs/core/lib/scss/variables";
 
-.searchContainer {
+.search-container {
   display: flex;
   align-items: center;
   margin-bottom: 40px;
@@ -11,7 +11,7 @@
   border-radius: 3px;
 
   .text {
-    margin: 0 10px
+    margin: 0 10px;
   }
 
   .search {
@@ -24,9 +24,8 @@
     background: rgba(167, 182, 194, 0.3);
   }
 
-  .searchButton {
+  .search-button {
     color: $white !important;
     margin-left: 10px;
   }
 }
-
