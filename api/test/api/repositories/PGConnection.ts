@@ -25,7 +25,7 @@ function retry<T>(fn: () => Promise<T>, ms = 1000, maxRetries = 5): Promise<T> {
     var retries = 0;
     fn()
       .then(resolve)
-      .catch((err) => {
+      .catch(() => {
         setTimeout(() => {
           ++retries;
           if (retries == maxRetries) {
