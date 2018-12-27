@@ -88,7 +88,7 @@ class AuthService {
         },
         createdAt: new Date()
       };
-      this.createUser(adminUser);
+      await this.createUser(adminUser);
       return true;
     }
   }
