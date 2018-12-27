@@ -3,6 +3,7 @@ import ScheduleEventPage from "./pages/ScheduleEventPage/ScheduleEventPage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import LogoutPage from "./pages/LogoutPage/LogoutPage";
 import EventListPage from "./pages/EventListPage/EventListPage";
+import EventDetailPage from "./pages/EventDetailPage/EventDetailPage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
@@ -24,6 +25,7 @@ class App extends Component {
             <Route exact path="/logout" component={LogoutPage} />
             <Route path="/events/:type" component={EventListPage} />
             <Route exact path="/events" component={EventListPage} />
+            <Route path="/events/:slug" component={EventDetailPage} />
             <Route component={NotFoundPage} />
           </Switch>
         </div>

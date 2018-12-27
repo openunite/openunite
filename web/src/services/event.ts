@@ -2,6 +2,22 @@ import ApiService from "./api";
 import moment from "moment";
 
 export class EventService {
+  async getEventBySlug(slug: string) {
+    const api = new ApiService();
+    let event;
+
+    try {
+      event = await api.get(`events/${slug}`);
+    } catch (err) {
+      console.log(err);
+      return;
+    }
+
+    event.date = moment(event.date);
+
+    return event;
+  }
+
   async getEvents(type: string = "all") {
     const api = new ApiService();
     let events;
