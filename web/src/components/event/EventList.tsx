@@ -1,14 +1,26 @@
 import React, { Component } from "react";
 import { Card } from "@blueprintjs/core";
-import { GroupEvent } from "./event-demo";
-import { Link } from "react-router-dom";
-import { withRouter, RouteComponentProps } from "react-router-dom";
-
+import { Link, withRouter, RouteComponentProps } from "react-router-dom";
 import "./EventList.scss";
 
 type EventListProps = RouteComponentProps<any> & {
   events: GroupEvent[];
 };
+
+export interface Group {
+  id: number;
+  name: string;
+}
+
+export interface GroupEvent {
+  id: number;
+  title: string;
+  date: any;
+  attendees: number;
+  description: string;
+  slug: string;
+  group: Group;
+}
 
 class EventList extends Component<EventListProps> {
   constructor(props: any) {

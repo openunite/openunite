@@ -18,7 +18,7 @@ export class EventService {
     return event;
   }
 
-  async getEvents() {
+  async getEvents(type: string = "all") {
     const api = new ApiService();
     let events;
 
