@@ -39,12 +39,12 @@ class EventListPage extends Component<RouteComponentProps<any>> {
 
   render() {
     return (
-      <div className="eventListPage">
+      <div className="event-list-page">
         <header>
           <Header />
         </header>
 
-        <div className="flexContainer wrapper">
+        <div className="flex-container wrapper">
           <main>
             {this.state.events.length > 0 ? (
               <div>
