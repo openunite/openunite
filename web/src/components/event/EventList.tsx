@@ -39,7 +39,7 @@ class EventList extends Component<EventListProps> {
           return (
             <Card
               key={event.id}
-              className="eventItem"
+              className="event-item"
               onClick={e => this.goToEvent(event.slug)}
             >
               <span className="date">{event.date.format("dddd, MMMM D")}</span>
