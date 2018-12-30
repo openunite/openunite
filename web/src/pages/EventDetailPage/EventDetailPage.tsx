@@ -32,7 +32,7 @@ class EventDetailPage extends Component<RouteComponentProps<any>> {
           <Header />
         </header>
 
-        <div className="flexContainer wrapper">
+        <div className="flex-container wrapper">
           <main>
             <EventDetail event={this.state.event} />
           </main>
